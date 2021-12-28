@@ -1,0 +1,24 @@
+Power Shell commands for Docker
+for a new wsl, go to the store and find e.g. Debian
+wsl --list --all
+wsl --setdefault distro_name_goes_here
+wsl --unregister distro_name_goes_here
+
+How To Dockerize ShinyApps
+--create an app
+--create an Rproject from the folder in which the app resides
+--in the project, run renv::init()
+--create the Dockerfile from here https://www.statworx.com/ch/blog/how-to-dockerize-shinyapps/
+--navigate to the folder, in which the Dockerfile is located
+--docker build -t sh-app .
+--docker run -d --rm -p 3838:3838 sh-app
+
+
+cd /c/Users/novot/docker-training/examples
+docker build -t simple-image .
+docker run --name simple-image -d -p 8000:80 simple-image
+docker rm -f $(docker ps -a -q)
+
+https://github.com/ondrejsika/docker-training
+
+
